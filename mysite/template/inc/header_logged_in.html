@@ -1,0 +1,241 @@
+{% date_default_timezone_set('America/Montreal'); %}
+
+<!doctype html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7 {% print "html-"+ page %}"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8 {% print "html-"+ page %}"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" {% print "html-"+ page %}"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js {% print "html-"+ page %}"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+
+    <!--force Internet Explorer to use the latest rendering engine available-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Web APP</title>
+
+    <!--mobile meta (hooray!)-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=1400">
+
+	<!-- Bootstrap -->
+    <link href="bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+   	<!-- Plugins -->
+    <link href="lightbox/ekko-lightbox.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css?v={% print time(); %}" type="text/css" media="all" />
+
+
+
+    <script type='text/javascript' src='js/jquery.js'></script>
+
+    <script type='text/javascript' src='bootstrap-3.3.2-dist/js/bootstrap.min.js'></script>
+
+    <script type='text/javascript' src='js/libs/modernizr.custom.min.js'></script>
+
+    <script type='text/javascript' src="lightbox/ekko-lightbox.min.js"></script>
+
+    <script type='text/javascript' src='js/scripts.js?v={% print time(); %}'></script>
+    <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+
+
+
+    <script type='text/javascript' src='js/imageMapResizer.min.js'></script>
+
+    <!--drop Google Analytics Here -->
+    <!--end analytics -->
+
+
+
+</head>
+                            
+<body class="loggedIn page-{% print page; %}" itemscope itemtype="http://schema.org/WebPage">
+
+<div id="menuLeft">
+
+    <a href="./my_account.html" class="home"><img src="./images/home-icon.png"/></a>
+    <ul id="slideMenu">
+        <li {% if (page == "ata24" | page == "ata-rat" | page == "ata24-general"): %}class="active"    {% endif %}>
+            <a href="main.html">Systems Review</a>
+            <div class="submenu">
+               <div class="first-level">
+                    <h3>Systems<br/>Review</h3>
+                    <ul>
+                        <li><span>ATA 21<br/>Air-conditioning</span></li>
+                        <li><span>ATA 23<br/>Communication</span></li>
+                        <li><a {% if (page == "ata24"): %}class="current-page"{% endif %} href="ata24-general.html">ATA 24<br/>Electrical Power</a></li>
+                        <li><span>ATA 26<br/>Fire Protection</span></li>
+                        <li><span>ATA 27<br/>Flight Controls</span></li>
+                        <li><span>ATA 28<br/>Fuel</span></li>
+                    </ul>
+               </div>
+               <div class="second-level">
+                    <h3>Systems<br/>Review</h3>
+                    <h4>ATA 24<br/>Electrical Power</h4>
+                    <ul>
+                        <li><span>Objectives</span></li>
+                        <li><a {% if (page == "ata24-general"): %}class="current-page"{% endif %} href="ata24-general.html">General</a></li>
+                        <li><span>System Introduction</span></li>
+                        <li><span>System Description</span></li>
+                        <li><span>AC Power</span></li>
+                        <li><span>DC Power</span></li>
+                        <li><span>Power Distribution</span></li>
+                        <li class="has-submenu-arrow">
+                            <span>Normal System Operation <i class="glyphicon glyphicon-chevron-down"></i></span>
+                            <ul>
+                                <li><span>Batteries Only</span></li>
+                                <li><span>External DC</span></li>
+                                <li><span>External AC</span></li>
+                                <li><a {% if (page == "ata24-rat"): %}class="current-page"{% endif %} href="ata24-rat.html">RAT</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+               </div>
+            </div>
+
+
+        </li>
+        <li {% if (page == "cockpit_training"): %}class="active"{% endif %}>
+            <a href="cockpit_training.html">Cockpit Training</a>
+        </li>
+        <li {% if (page == "abnormal_emergency_procedures" | page == "engine_failure"): %}class="active"{% endif %}>
+            <a href="abnormal_emergency_procedures.html">Emergency and Abnormal Procedures</a>
+            <div class="submenu">
+                <h3>Emergency and<br/>Abnormal Procedures</h3>
+                <ul>
+                    <li><span>Quid securi etiam tamquam</span></li>
+                    <li><span>Eu fugiat nulla pariatur.</span></li>
+                    <li><span>Non equidem invideo</span></li>
+                    <li><span>Magis posuere velit aliquet</span></li>
+                    <li><a {% if (page == "engine_failure"): %}class="current-page"{% endif %} href="engine_failure.html">Engine Failure/Fire in Flight</a></li>
+                    <li><span>Me non paenitet </span></li>
+                    <li><span>Nullum festiviorem</span></li>
+                    <li><span> Excogitasse ad hoc</span></li>
+                    <li><span>Salutantibus vitae </span></li>
+                    <li><span>Elit libero, a pharetra augue</span></li>
+                    <li><span>Quisque placerat  </span></li>
+                    <li><span>Facilisis egestas cillum dolo</span></li>
+                    <li><span>Facilisis egestas festiviorem</span></li>
+                    <li><span>Etiam habebis </span></li>
+                    <li><span>Sem dicantur magna mollis euismod</span></li>
+                    <li><span>Quid securi etiam </span></li>
+                    <li><span>Tamquam eu fugiat nulla pariatur</span></li>
+                    <li><span>Volutpat ut pharetra vitae</span></li>
+                    <li><span>Lobortis sed nibh</span></li>
+                    <li><span>Quis aute iure reprehenderit </span></li>
+                    <li><span>In voluptate velit esse</span></li>
+                </ul>
+            </div>
+        </li>
+        <li {% if (page == "flight_training"): %}class="active"{% endif %}>
+            <a href="flight_training.html">Flight Training</a>
+        </li>
+        <li {% if(page == "walk_around"): %}class="active"{% endif %}>
+            <a href="walk_around.html">Walk Around</a>
+        </li>
+        <li {% if (page == "flash_cards" | page == "flash_cards_memory_items"): %}class="active"{% endif %}>
+            <a href="flash_cards.html">Flash Cards</a>
+            <div class="submenu">
+                <h3>Flash<br/>Cards</h3>
+                <ul>
+                    <li><span>Limitations</span></li>
+                    <li><a {% if (page == "flash_cards_memory_items"): %}class="current-page"{% endif %} href="flash_cards_memory_items.html">Memory items</a></li>
+                    <li><span>Annunciators</span></li>
+                    <li><span>Systems</span></li>
+                    <!--<li><span>Deck 3</span></li>
+                    <li><span>Deck 4</span></li>
+                    <li><span>Deck 5</span></li>
+                    <li><span>Deck 6</span></li>
+                    <li><span>Deck 7</span></li>
+                    <li><span>Deck 8</span></li>-->
+                </ul>
+            </div>
+        </li>
+        <li {% if (page == "quick_reference_manuals"): %}class="active"{% endif %}>
+            <a href="quick_reference_manuals.html">Quick Reference Manuals</a>
+
+            <div class="submenu">
+                <h3>Quick Reference<br/>Manuals</h3>
+                <ul>
+                  <li><a class="pdf-manual" href="external/app/CS_OH.pdf">Operating Handbook</a></li>
+                  <li><a class="pdf-manual" href="external/app/CS_PTM.pdf">Pilot Training Manual </a></li>
+                  <li><span>Non equidem invideo</span></li>
+                  <li><span>Magis posuere velit aliquet</span></li>
+                  <li><span>Me non paenitet </span></li>
+                  <li><span>Nullum festiviorem</span></li>
+                  <li><span> Excogitasse ad hoc</span></li>
+                  <li><span>Salutantibus vitae </span></li>
+                  <li><span>Elit libero, a pharetra augue</span></li>
+                </ul>
+            </div>
+
+        </li>
+        <li {% if (page == "quiz"): %}class="active"{% endif %}>
+            <a href="quiz.html">Quiz</a>
+            <div class="submenu">
+                <h3>Self-Check</h3>
+                <ul>
+                    <li><span>ATA 21<br/>Air-conditioning</span></li>
+                    <li><span>ATA 23<br/>Communication</span></li>
+                    <li><a {% if (page == "quiz"): %}class="current-page"{% endif %} href="quiz.html">ATA 24<br/>Electrical Power</a></li>
+                    <li><span>ATA 26<br/>Fire Protection</span></li>
+                    <li><span>ATA 27<br/>Flight Controls</span></li>
+                    <li><span>ATA 28<br/>Fuel</span></li>
+                </ul>
+            </div>
+        </li>
+        <li {% if(page == "my_account"): %}class="active"{% endif %}>
+            <a href="my_account.html">My Account</a>
+        </li>
+    </ul>
+
+    <ul id="secondaryMenu">
+        <li><a href="#">Help</a></li>
+        <li><a href="#" class="logout">Log out</a></li>
+    </ul>
+</div>
+
+<header id="header">
+    <img src="./images/cessna.jpg" class="logo-aircraft">
+
+    <div id="menuBarDiv">
+    
+
+    <div id="menuLogoDiv" class="menuPic"></div>
+
+    <form>
+    <input id="search" type="text" class="search">
+    </form>
+
+    <div class="toolbox">
+      <img src="./images/toolbox.png" class="trigger" />
+      <div class="hover">
+        <span class="title"><img src="images/toolbox-hover-icon-1.png" /> Toolbox</span>
+        <a href="#" class="toolbox-bookmark">
+            <span class="add-bookmark"><img src="images/toolbox-hover-icon-2.png" /> Bookmark</span>
+            <span class="remove-bookmark"><i class="glyphicon glyphicon-ok"></i>Remove Bookmark</span>
+        </a>
+        <a href="#" class="toolbox-add-a-note"><img src="images/toolbox-hover-icon-3.png" /> Add a note</a>
+        <a href="#" class="toolbox-hilighting"><img src="images/toolbox-hover-icon-4.png" /> Hi-lighting</a>
+        <a href="#" class="toolbox-freehand"><img src="images/toolbox-hover-icon-5.png" /> Freehand sketch</a>
+      </div>
+    </div>
+    </div>
+
+</header>
+
+<div class="notes" style="display:none;">
+  <div class="img">
+    <a href="#" class="add-notes"></a>
+    <img src="images/notes.png">
+    <a href="#" class="close-notes"></a>
+  </div>
+</div>
+
+
+<div id="container">
+

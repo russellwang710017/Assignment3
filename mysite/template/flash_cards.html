@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+	h1 {
+    position: absolute;
+    left: 400px;
+    top: 100px;
+	}
+	table {
+		margin-left: 20px;
+	}
+	th {
+		padding: 80px;
+	}
+	#jee {
+		width: 100px;
+		height: 100px;
+	}
+</style>
+  <!--<div class="content"><a href="flash_cards_memory_items.html"><img src="external/app/images/flash-cards-decks.png" /></a></div>-->
+  <h1 style="text-align:center"><b>Flashcard Decks</b></h1>
+  <br></br>
+  <br></br>
+  <table>
+  	<tr>
+  		<th><a href="flash_cards_memory_items.html"><img src="external/app/images/limitations.png" /></a></th>
+  		<th><a href="flash_cards_memory_items.html"><img src="external/app/images/memoryitems.png" /></a></th>
+  	</tr>
+  	<tr>
+  		<th><a href="flash_cards_memory_items.html"><img src="external/app/images/annunciators.png" /></a></th>
+  		<th><a href="flash_cards_memory_items.html"><img src="external/app/images/aircraftsystems.png" /></a></th>
+  		<!--<td>Systems</td>-->
+  	</tr>
+  </table>
+{% endblock %}

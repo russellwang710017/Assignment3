@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="content">
+
+  <h1>MEMORY ITEMS</h1>
+
+  <div class="flash-cards">
+    <div class="item">
+      <div class="question">
+        <img src="images/question-1.png"/>
+      </div>
+      <div class="answer">
+        <img src="images/answer-1.png"/>
+      </div>
+      <a href="#" class="flip">Flip card<img src="images/flash-cards-options-flip.png"></a>
+    </div>
+    <div class="item">
+      <div class="question">
+        <img src="images/question-2.png"/>
+        <a href="#" class="flip">Flip card<img src="images/flash-cards-options-flip.png"></a>
+      </div>
+      <div class="answer">
+        <img src="images/answer-2.png"/>
+      </div>
+      <a href="#" class="flip">Flip card<img src="images/flash-cards-options-flip.png"></a>
+    </div>
+
+    <nav>
+      <img src="images/previous-question.png" class="previous">
+      <div class="bar"><span></span></div>
+      <img src="images/next-question.png" class="next">
+      <div class="page">1 of 2</div>
+    </nav>
+  </div>
+
+  <div class="flash-cards-options">
+    <div>
+      <h3>Motion</h3>
+      <img src="images/flash-cards-options-motion.png" >
+    </div>
+
+    <div>
+      <h3>Audio</h3>
+      <img src="images/flash-cards-options-audio.png" >
+    </div>
+
+    <div class="advanced">
+      <img src="images/flash-cards-options-advanced.png" >
+      <a href="#">Advanced</a>
+    </div>
+
+    <div>
+      <h3>Start with</h3>
+      <img src="images/flash-cards-options-start.png" >
+    </div>
+
+    <div>
+      <img src="images/flash-cards-options-play.png" >
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+
+  var currentQuestion = 1;
+  var totalQuestions = 2;
+  $('.flip').click(function(e){
+    e.preventDefault();
+    $(this).closest('.item').toggleClass('answer-visible');
+  })
+
+  $('.next').click(function(e){
+    $(this).addClass('clicked');
+    currentQuestion++;
+    if ( currentQuestion > totalQuestions ){
+      currentQuestion = totalQuestions;
+    }
+    $('.flash-cards .item').hide();
+    $('.flash-cards .item:nth-child('+currentQuestion+')').show();
+    $('.item').removeClass('answer-visible');
+    $('.page').text(currentQuestion + ' of ' + totalQuestions);
+    $('.bar span').width((currentQuestion / totalQuestions) * 100 + '%');
+  })
+
+  $('.previous').click(function(e){
+    $(this).addClass('clicked');
+    currentQuestion--;
+    if ( currentQuestion < 1 ){
+      currentQuestion = 1;
+    }
+    $('.flash-cards .item').hide();
+    $('.flash-cards .item:nth-child('+currentQuestion+')').show();
+    $('.item').removeClass('answer-visible');
+    $('.page').text(currentQuestion + ' of ' + totalQuestions);
+    $('.bar span').width((currentQuestion / totalQuestions) * 100 + '%');
+  })
+
+  //Animation de fleches
+  setInterval(function() {
+    $('.next').not('.clicked').animate({
+        right: "-7px",
+    }, 600, function() {
+      $('.next').animate({right: "0px"}, 600);
+    });
+  }, 1500);
+
+
+  setInterval(function() {
+    $('.previous').not('.clicked').animate({
+        left: "-7px",
+    }, 600, function() {
+      $('.previous').animate({left: "0px"}, 600);
+    });
+  }, 1500);
+
+
+
+</script>
+{% endblock %}

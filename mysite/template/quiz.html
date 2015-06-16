@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+	.choice{
+		font-size: 200%;
+	}
+</style>
+	<div class="container">
+		<div id="quiz-row" class="row">
+
+					<div id="start-quiz-header" class="jumbotron">
+			              <h1>Exam: Electrical – ATA 24</h1>
+			              <p style="font-size: 200%">Test your knowledge</p>
+			              <p><button type="button" id="start-quiz-btn" class="btn btn-primary btn-lg"><label style="font-size:200%";>Start Self-Check</label></button></p>
+			        </div>
+
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="col-sm-12">
+					<div id="quiz-form">
+						<div id="question-1" class="quiz-question panel panel-default">
+							<div class="panel-heading"><h2>Question 1</h2></div>
+							<div class="panel-body">
+								<div class="question-text"><p style="font-size: 2rem">Most aircraft systems are powered by DC through several DC busses. However, on the aircraft all power that is generated is normally AC.</p></div>
+								<div class="radio">
+								  <label id="answer-1"><input type="radio" name="question1" class="choice"><label style="font-size: 200%;">TRUE</label></label>
+								</div>
+								<div class="radio">
+								  <label><input type="radio" name="question1" class="choice"><label style="font-size: 200%;">FALSE</label></label>
+								</div>
+							</div>
+						</div>
+						<div id="question-2" class="quiz-question panel panel-default">
+							<div class="panel-heading"><h2>Question 2</h2></div>
+							<div class="panel-body">
+								<div class="question-text"><p style="font-size: 2rem">To have backup power for unlimited time a Ram Air Turbine (RAT) can be deployed by the crew.</p></div>
+								<div class="radio">
+								  <label id="answer-2"><input type="radio" name="question2"><label style="font-size: 200%;">TRUE</label></label>
+								</div>
+								<div class="radio">
+								  <label><input type="radio" name="question2"><label style="font-size: 200%;">FALSE</label></label>
+								</div>
+							</div>
+						</div>
+						<div id="question-3" class="quiz-question panel panel-default">
+							<div class="panel-heading"><h2>Question 3</h2></div>
+							<div class="panel-body">
+								<div class="question-text"><p style="font-size: 2rem">An Inverter, is to convert AC to DC, is installed to generate DC power when only AC power is available.</p></div>
+								<div class="radio">
+								  <label><input type="radio" name="question3"><label style="font-size: 200%;">TRUE</label></label>
+								</div>
+								<div class="radio">
+								  <label id="answer-3"><input type="radio" name="question3"><label style="font-size: 200%;">FALSE</label></label>
+								</div>
+							</div>
+						</div>
+						<div id="question-4" class="quiz-question panel panel-default">
+							<div class="panel-heading"><h2>Question 4</h2></div>
+							<div class="panel-body">
+								<div class="question-text"><p style="font-size: 2rem">An Inverter, to convert DC to AC, is installed to generate AC power when only DC power is available. DC power is generally identified as:</p></div>
+								<div class="radio">
+								  <label><input type="radio" name="question4"><label style="font-size: 200%;">14V DC.</label></label>
+								</div>
+								<div class="radio">
+								  <label id="answer-4"><input type="radio" name="question4"><label style="font-size: 200%;">28V DC.</label></label>
+								</div>
+								<div class="radio">
+								  <label><input type="radio" name="question4"><label style="font-size: 200%;">14V AC.</label></label>
+								</div>
+								<div class="radio">
+								  <label><input type="radio" name="question4"><label style="font-size: 200%;">28V AC.</label></label>
+								</div>
+							</div>
+						</div>
+
+						<nav id="next-prev-btn">
+						  <ul class="pager">
+						    <li class="previous disabled"><a id="prev-btn" href="#"><span aria-hidden="true">&larr;</span><label style="font-size: 200%;">Prev</label></a></li>
+						    <li class="next"><a id="next-btn" href="#"><label style="font-size: 200%;">Next</label><span aria-hidden="true">&rarr;</span></a></li>
+						  </ul>
+						</nav>
+
+						<div id="quiz-results-btn" class="panel panel-default text-center">
+							<div class="panel-body">
+								<button type="button" id="myButton" class="btn btn-primary btn-lg"><label style="font-size: 200%;">See Self-Check Results</label></button>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+<script>
+
+	var questionIndex = 1;
+
+    jQuery(document).ready(function($){
+    	jQuery('#myButton').click(function() {
+    		jQuery('#answer-1').addClass('bold');
+    		jQuery('#answer-2').addClass('bold');
+    		jQuery('#answer-3').addClass('bold');
+    		jQuery('#answer-4').addClass('bold');
+
+    		if (jQuery('#answer-1 input').attr('checked', true)) { jQuery('#answer-1').addClass('correct') } else { jQuery('#answer-1').addClass('wrong') }
+    		if (jQuery('#answer-2 input').attr('checked', true)) { jQuery('#answer-2').addClass('correct') } else { jQuery('#answer-2').addClass('wrong') }
+    		if (jQuery('#answer-3 input').attr('checked', true)) { jQuery('#answer-3').addClass('correct') } else { jQuery('#answer-3').addClass('wrong') }
+    		if (jQuery('#answer-4 input').attr('checked', true)) { jQuery('#answer-4').addClass('correct') } else { jQuery('#answer-4').addClass('wrong') }
+
+    		jQuery('#question-1').fadeIn();
+    		jQuery('#question-2').fadeIn();
+    		jQuery('#question-3').fadeIn();
+    		jQuery('#question-4').fadeIn();
+
+    		jQuery('#quiz-results-btn').hide();
+
+    		jQuery("html, body").animate({scrollTop:0}, '500', 'swing', function() {
+
+    		});
+    	});
+
+    	jQuery('#start-quiz-btn').click(function() {
+    		jQuery('#start-quiz-header').hide();
+    		jQuery('#next-prev-btn').fadeIn();
+    		jQuery('#question-'+questionIndex).fadeIn();
+        });
+
+
+    	jQuery('#next-btn').click(function() {
+    		if (questionIndex+1 < 5) {
+	        	jQuery('#question-'+questionIndex).fadeOut( "fast", function() {
+	        		questionIndex += 1;
+	        		jQuery('#question-'+questionIndex).fadeIn();
+	        	  });
+    		}
+    		else {
+
+    			jQuery('#question-4').fadeOut( "fast", function() {
+    				jQuery('#next-prev-btn').hide();
+    				jQuery('#quiz-results-btn').fadeIn();
+	        	  });
+        	}
+        });
+
+    	jQuery('#prev-btn').click(function() {
+
+    		if (questionIndex-1 > 0) {
+	        	jQuery('#question-'+questionIndex).fadeOut( "fast", function() {
+	        		questionIndex -= 1;
+	        		jQuery('#question-'+questionIndex).fadeIn();
+	        	  });
+    		}
+        });
+
+		jQuery('#question-1').hide();
+		jQuery('#question-2').hide();
+		jQuery('#question-3').hide();
+		jQuery('#question-4').hide();
+		jQuery('#quiz-results-btn').hide();
+		jQuery('#next-prev-btn').hide();
+    })
+</script>
+
+{% endblock %}

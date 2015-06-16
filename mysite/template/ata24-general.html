@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+
+{% block content %}
+<div class="content">
+  <h1><b>GENERAL</b></h1>
+
+  <p>The aircraft electrical system consists of AC and DC power supplies and busses. Most of the system operation is automatic in Normal and Abnormal operation provided the switches on the Electrical Power Control Panel are in the proper position. Most aircraft systems are powered by DC through several DC busses. However, on the aircraft all power that is generated is normally AC. Only a few systems will use AC power directly, mainly high power users like Cabin / Galley Power, Cabin Window heating, etc. AC power is generated and it will be converted to DC by <a href="#" data-container="body" data-toggle="popover" title="<b>Transformer Rectifier Units</b>" data-content="<p>A <i>Transformer Rectifier Unit</i> converts AC power to DC power by first transforming the input AC voltage to a lower AC voltage which is then rectified to DC power.</p><p>The nominal output voltage is 28 VDC but this can vary depending on the load.</p>">Transformer Rectifier Units</a> (TRUs). AC power is also used to power several <a href="#" ata-container="body" data-toggle="popover" title="<b>Battery Chargers</b>" data-content="<p>A Battery charger is basically consisting of a TRU that converts AC power in to DC power which is then used to charge a battery. Some chargers have a specific control function to control the battery charge current by varying the output voltage.</p>">Battery Chargers</a> for the batteries that are installed for power up and power redundancy.</p>
+
+
+  <a class="lightbox-img" href="external/app/images/general-1.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text" ><img src="images/ata-24-1.png" style="width:auto; height:auto"></a>
+  <a class="lightbox-img" href="external/app/images/general-2.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text"><img src="images/ata-24-2.png" style="width:auto; height:auto"></a>
+                                                                                                                                                         <!--<img id="myimage" src="ocean.gif" style="width:200px; height:150px" />-->
+</div>
+{% endblock %}
+

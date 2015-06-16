@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>APP Draft - Abnormal/Emergency Procedures</title>
+<link href="twoColLiqLt.css" rel="stylesheet" type="text/css" /><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+
+	<!-- Bootstrap -->
+    <link href="../../bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+   	<!-- Plugins -->
+    <link href="../../lightbox/ekko-lightbox.min.css" rel="stylesheet">
+
+    <script type='text/javascript' src='../../js/jquery.js'></script>
+    <script type='text/javascript' src='../../js/libs/modernizr.custom.min.js'></script>
+    <script type='text/javascript' src='../../js/jquery-ui.min.js'></script>
+
+    <style>body{background:none;}</style>
+
+
+
+</head>
+
+<body>
+
+<div class="container-2">
+<div id="menu-sidebar" class="sidebar1 sidebar1-opened">
+<div class="TOC-header"><a href="Abn-Emerg-Procedures.html">Emergency Procedures</a><div style="float:right"><a id="menu-btn" href="#">X</a></div></div>
+<ul class="nav">
+    <form id="form1" name="form1" method="post" action="">
+      <label>
+        <p><div align="right">Search
+          <input width="60px" type="text" name="search TOC" id="search TOC" />
+        </div></p>
+      </label>
+    </form>
+  <li class="li0">Quid securi etiam tamquam</li>
+<li class="li1"><span class="li0">Eu fugiat nulla pariatur.</span></li>
+  <li class="li1">Non equidem invideo</li>
+  <li class="li1">Magis posuere velit aliquet</li>
+  <li class="li1" style="background-color:#053C61">Engine Failure/Fire in Flight </li>
+  <li class="li1">Me non paenitet </li>
+  <li class="li1">Nullum festiviorem</li>
+  <li class="li1"> Excogitasse ad hoc</li>
+  <li class="li1">Salutantibus vitae </li>
+  <li class="li1">Elit libero, a pharetra augue</li>
+  <li class="li1">Quisque placerat  </li>
+  <li class="li1">Facilisis egestas cillum dolo</li>
+  <li class="li1">Facilisis egestas festiviorem</li>
+  <li class="li1">Etiam habebis </li>
+  <li class="li1">Sem dicantur magna mollis euismod</li>
+  <li class="li1">Quid securi etiam </li>
+  <li class="li1">Tamquam eu fugiat nulla pariatur</li>
+  <li class="li1">Volutpat ut pharetra vitae</li>
+  <li class="li1">Lobortis sed nibh</li>
+  <li class="li1">Quis aute iure reprehenderit </li>
+  <li class="li1">In voluptate velit esse</li>
+</ul>
+</div>
+<div class="content-2">
+    <h1>Engine Failure/Fire in Flight    </h1>
+    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+      <tr>
+        <td height="115" align="left" valign="top">Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Prima luce, cum quibus mons aliud  consensu ab eo. Curabitur est gravida et libero vitae dictum. Nec dubitamus multa iter quae et nos invenerat.</td>
+        <td width="50%" rowspan="2" align="center" valign="top"><a href="images/AEP/AEP.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text"><img src="images/AEP/AEP.png" width="355" height="541" /></a><br />
+        <span class="caption">Fig. x Page taken out of a QRH...</span></td>
+      </tr>
+      <tr>
+        <td width="33%" height="239" align="center" valign="top"><a href="images/AEP/Gulfstream_G650_Flight-Deck-Flow.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text"><img src="images/AEP/Gulfstream_G650_Flight-Deck-Flow_tn.png" alt="" width="200" height="133" /></a><br />
+        <span class="caption">Checklist Flow</span></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+
+<script type='text/javascript' src='../../bootstrap-3.3.2-dist/js/bootstrap.min.js'></script>
+<script type='text/javascript' src="../../lightbox/ekko-lightbox.min.js"></script>
+<script>
+
+	var isMenuOpen = true;
+
+    jQuery(document).ready(function($){
+
+        $("#menu-btn").click(function(){
+
+        	if (isMenuOpen) {
+                $("#menu-sidebar").removeClass("sidebar1-opened");
+                $("#menu-sidebar").addClass("sidebar1-closed");
+            	$(this).html(">>");
+            	isMenuOpen = false;
+        	} else {
+                $("#menu-sidebar").removeClass("sidebar1-closed");
+                $("#menu-sidebar").addClass("sidebar1-opened");
+            	$(this).html("X");
+            	isMenuOpen = true;
+        	}
+
+
+
+        });
+
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        $("#menu-sidebar").removeClass("sidebar1-closed");
+        $("#menu-sidebar").addClass("sidebar1-opened");
+
+        $('[data-toggle="popover"]').popover({trigger: 'click hover','placement': 'bottom', html: true, container: false});
+
+    });
+
+</script>
+
+</body>
+</html>

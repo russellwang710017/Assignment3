@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <div id="choose">
+        <div id="title">
+            <h1 class="active">Manufacturer</h1>
+            <h1>Aircraft</h1>
+        </div>
+
+        <div id="chooseContainer">
+            <div class="chooseBox active manufacturers">
+                <ul>
+                    <li><span>Cessna</span></li>
+                    <li><span>Dassault</span></li>
+                    <li><span>Gulfstream</span></li>
+                </ul>
+            </div>
+            <div class="chooseBox aircrafts" data-manufacturer="Cessna">
+                <ul>
+                    <li><a href="my_account.html">Citation Sovereign</a></li>
+                </ul>
+            </div>
+            <div class="chooseBox aircrafts" data-manufacturer="Dassault" style="display:none">
+                <ul>
+                    <li><span>F7X</span></li>
+                    <li><span>F900EX Easy</span></li>
+                    <li><span>F2000EX Easy</span></li>
+                </ul>
+            </div>
+            <div class="chooseBox aircrafts" data-manufacturer="Gulfstream" style="display:none">
+                <ul>
+                    <li><span>G650</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <p class="copy">Powered by Greybox, all rights reserved &copy; <?php echo date('Y'); ?></p>
+
+    <script>
+      $ = jQuery;
+      $('.manufacturers li').click(function(){
+        $('#choose h1').addClass('active');
+
+
+        $('.manufacturers li').removeClass('active');
+        $(this).addClass('active');
+        $('.aircrafts').hide();
+        $('.aircrafts[data-manufacturer="'+$(this).text()+'"]').show().addClass('active');
+      })
+    </script>
+{% endblock %}

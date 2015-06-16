@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<style type="text/css">
+#mostViewed, #bookmarks{border-top: 1px solid gray ; margin-top: 30px;}
+</style>
+
+<div style="width:100%; margin-right:0px;">
+	<a href="javascript:void(0)" style="
+	position: absolute;
+    right: 0px;
+    width: auto;
+    
+" onclick="contactInfo()">Contact Us</a>
+</div>
+
+<script>
+function contactInfo(){
+	alert("Greybox Solutions Inc.\n225 Rue Chabanel Ouest\nH2N2C9\nTraining Centre Information");
+}
+</script>
+<div class="content">
+<div id= "info" class="info">
+<h1 style="font-size:180%">John Smith</h1>
+
+<span class="accountLabel">email</span>
+<span class="accountText">johnsmith@cae.com</span>
+
+<span class="accountLabel">password</span>
+<span class="accountLink"><a href="http://www.google.ca">Change Password</a></span>
+
+<span class="accountLabel">Lorem Ipsum</span>
+<span class="accountText">Lorem Ipsum</span>
+<span class="accountLabel">Expiration Date</span>
+<span class="accountText">dd/mm/yyyy</span>
+<span class="accountLabel">Account Representative Name</span>
+<span class="accountText">name</span>
+<span class="accountLabel">Phone Number</span>
+<span class="accountText">(xxx)xxx-xxxx</span>
+</div>
+
+<div id="bookmarks" class="bookmarks">
+<h1 style="font-size:180%">Bookmarks</h1>
+<span class="accountLink"><a href="./main.html">My Bookmark</a></span>
+</div>
+
+<div id="mostViewed" class="mostViewed">
+<h1 style="font-size:180%">My Most Viewed Links </h1> <!--We need to add code to sort links here-->
+<ul>
+<li><span class="accountLink"><a href="./flash_cards.html">Flash Cards</a></span></li>
+<li><span class="accountLink"><a href="./flight_training.html">Flight Training</a></span></li>
+<li><span class="accountLink"><a href="./engine_failure.html">Engine Failure</a></span></li>
+<ul>
+</div>
+
+</div>
+{% endblock %}

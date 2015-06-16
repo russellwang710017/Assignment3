@@ -1,0 +1,98 @@
+</div>
+
+
+  <div class="note" style="display:none;">
+    <div class="top"><a href="#" class="close-note">&times;</a></div>
+    <textarea></textarea>
+    <button>Add note</button>
+  </div>
+
+
+  <div class="saved-note" style="display:none;">
+    <div class="top"><a href="#" class="close-note">&times;</a></div>
+    <div class="text"></div>
+  </div>
+
+
+<!--TODO: remove this, only for demonstration, or adjust it with wordpress function */-->
+<!--<script>
+    jQuery(document).ready(function($){
+        var location = window.location.href.split("/");
+        var currentPage = location[location.length - 1];
+        $("#menuBottom").find('a[href="' + currentPage + '"]').parent().addClass("active");
+    })
+</script>-->
+
+<script>
+
+</script>
+
+<!--End of remove this -->
+
+<script type='text/javascript' src='bootstrap-3.3.2-dist/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='Main.js'></script>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="ddpowerzoomer.js">
+
+/***********************************************
+* Image Power Zoomer- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+jQuery(document).ready(function($){ //fire on DOM ready
+
+  /*
+  EXAMPLE 1:
+  $('#myimage').addpowerzoom()
+
+  EXAMPLE 2:
+  $('img.vacation').addpowerzoom({
+    defaultpower: 2,
+    powerrange: [2,5],
+    largeimage: null,
+    magnifiersize: [100,100] //<--no comma following last option!
+  })
+  */
+
+})
+
+</script>
+
+<script type="text/javascript">
+jQuery(document).ready(function($){ //fire on DOM ready
+
+
+
+  $(".lightbox-img img").click(function () {
+    //$('this').find('img');
+    // alert($('this').closest('body').find('.img-responsive').attr('class'));
+    var bigImage = $('this');
+    setTimeout(function() {
+      alert(bigImage.closest('body').find('.img-responsive').attr('class'));
+      bigImage.closest('body').find('.img-responsive').addpowerzoom();
+    },1250); 
+  });
+ //{
+ //  defaultpower: 2,
+ //  powerrange: [2,5],
+ //  largeimage: "http://45.55.200.28/external/app/images/general-1.png",
+ //  magnifiersize: [100,100] //<--no comma following last option!
+ // })
+ // $('#myimage2').addpowerzoom({
+ //  defaultpower: 2,
+ //  powerrange: [2,5],
+ //  largeimage: "http://45.55.200.28/external/app/images/general-2.png",
+ //  magnifiersize: [100,100] //<--no comma following last option!
+ // })
+})
+</script>
+
+</body>
+</html>

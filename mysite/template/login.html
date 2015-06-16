@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div id="loginContainer">
+    <h2>Login</h2>
+    <form action="terms.html">
+        <input id="username" type="text" placeholder="Username" autofocus="autofocus"/><br />
+        <input id="password" type="text" placeholder="Password" /><br />
+        <input type="submit" value="Login" />
+    </form>
+    <p class="copy">Powered by Greybox, all rights reserved &copy; {% print date("Y"); %}</p>
+</div>
+{% endblock %}

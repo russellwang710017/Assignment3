@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>APP Draft - Abnormal/Emergency Procedures</title>
+<link href="twoColLiqLt.css" rel="stylesheet" type="text/css" /><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+
+
+	<!-- Bootstrap -->
+    <link href="../../bootstrap-3.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+
+   	<!-- Plugins -->
+    <link href="../../lightbox/ekko-lightbox.min.css" rel="stylesheet">
+
+    <script type='text/javascript' src='../../js/jquery.js'></script>
+    <script type='text/javascript' src='../../js/libs/modernizr.custom.min.js'></script>
+    <script type='text/javascript' src='../../js/jquery-ui.min.js'></script>
+
+<style>body{background:none;}</style>
+</head>
+
+<body>
+
+<div class="container-2">
+<div class="content-2">
+    <h1>Quick Reference Manuals</h1>
+    <p>Quam diu etiam furor iste tuus nos eludet? Donec sed odio operae, eu vulputate felis rhoncus. Sed haec quis possit intrepidus aestimare tellus. Phasellus laoreet lorem vel dolor tempus vehicula.<br />
+    Ut enim ad minim veniam, quis nostrud exercitation. Tityre, tu patulae recubans sub tegmine fagi  dolor. Qui ipsorum lingua Celtae, nostra Galli appellantur. Gallia est omnis divisa in partes tres, quarum. </p>
+    <table width="100%" border="0" cellspacing="15" cellpadding="0">
+      <tr>
+        <td width="25%" valign="top" align="left"><h2>Fire</h2>
+        <p>Morbi fringilla convallis sapien, id pulvinar odio volutpat. Petierunt uti sibi concilium totius Galliae in diem certam indicere. </p></td>
+        <td width="25%" valign="top" align="left"><h2>Mechanical</h2>
+        <p>Phasellus laoreet lorem vel dolor tempus vehicula. Phasellus laoreet lorem vel dolor tempus vehicula. </p></td>
+        <td width="25%" valign="top" align="left"><h2>Electrical</h2>
+        <p>Ab illo tempore, ab est sed immemorabili. Vivamus sagittis lacus vel augue laoreet rutrum faucibus. </p></td>
+        <td width="25%" valign="top" align="left"><h2>Human</h2>
+        <p>Tu quoque, Brute, fili mi, nihil timor populi, nihil! Sed haec quis possit intrepidus aestimare tellus. </p></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+</div>
+</div>
+
+
+<script type='text/javascript' src='../../bootstrap-3.3.2-dist/js/bootstrap.min.js'></script>
+<script type='text/javascript' src="../../lightbox/ekko-lightbox.min.js"></script>
+<script>
+
+	var isMenuOpen = true;
+
+    jQuery(document).ready(function($){
+
+        $("#menu-btn").click(function(){
+
+        	if (isMenuOpen) {
+                $("#menu-sidebar").removeClass("sidebar1-opened");
+                $("#menu-sidebar").addClass("sidebar1-closed");
+            	$(this).html(">>");
+            	isMenuOpen = false;
+        	} else {
+                $("#menu-sidebar").removeClass("sidebar1-closed");
+                $("#menu-sidebar").addClass("sidebar1-opened");
+            	$(this).html("X");
+            	isMenuOpen = true;
+        	}
+
+
+
+        });
+
+        $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+
+        $("#menu-sidebar").removeClass("sidebar1-closed");
+        $("#menu-sidebar").addClass("sidebar1-opened");
+
+        $('[data-toggle="popover"]').popover({trigger: 'click hover','placement': 'bottom', html: true, container: false});
+
+    });
+
+</script>
+
+</body>
+</html>

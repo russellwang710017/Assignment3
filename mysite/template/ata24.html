@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="content">
+  <h1>GENERAL</h1>
+
+  <p>The aircraft electrical system consists of AC and DC power supplies and busses. Most of the system operation is automatic in Normal and Abnormal operation provided the switches on the Electrical Power Control Panel are in the proper position. Most aircraft systems are powered by DC through several DC busses. However, on the aircraft all power that is generated is normally AC. Only a few systems will use AC power directly, mainly high power users like Cabin / Galley Power, Cabin Window heating, etc. AC Power is generated at 115/200 Volt, 3 phases, 400 Hz. AC power is generated and it will be converted to DC by <a href="#">Transformer Rectifier Units</a> (TRUs). AC power is also used to power several <a href="#">Battery Chargers</a> for the batteries that are installed for power up and power redundancy.</p>
+  <a class="lightbox-img" href="external/app/images/general-1.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text" ><img src="images/ata-24-1.png"></a>
+  <a class="lightbox-img" href="external/app/images/general-2.png" data-toggle="lightbox" data-title="A custom title" data-footer="A custom footer text"><img src="images/ata-24-2.png"></a>
+</div>
+{% endblock %}

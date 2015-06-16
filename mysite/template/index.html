@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<style>
+
+</style>
+
+<div id="splash">
+  <a href="./login.html"><img src="./images/splash.png" /></a>
+</div>
+
+<script>
+	$('#splash').addClass('zoomIn animated');
+	window.setTimeout(function(){
+		window.location.href = "login.html";
+	}, 3000);
+</script>
+{% endblock %}

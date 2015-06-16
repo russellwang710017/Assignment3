@@ -1,0 +1,47 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+
+.wrap {
+  width: 1040px;
+}
+
+/*********************
+MAIN PAGE
+*********************/
+
+#course-row{
+  margin-top: 40px;
+
+    .course-cell{
+        height:320px;
+        padding-top: 80px;
+        font-size: 1em;
+    }
+}
+
+
+
+/*********************
+GENERAL STYLES
+*********************/
+#loginContainer{
+  text-align: center;
+  margin-top: 240px;
+
+  h2{
+    margin-bottom: 25px;
+  }
+
+  input{
+    display: inline-block;
+    max-width: 300px;
+  }
+}

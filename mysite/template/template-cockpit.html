@@ -1,0 +1,54 @@
+<!--
+ Template Name: Cockpit Page
+ *
+ * This is your custom page template. You can create as many of these as you need.
+ * Simply name is "page-whatever.php" and in add the "Template Name" title at the
+ * top, the same way it is here.
+ *
+ * When you create your page, you can just select the template and viola, you have
+ * a custom page template to call your very own. Your mother would be so proud.
+ *
+ * For more info: http://codex.wordpress.org/Page_Templates
+-->
+{% get_header(); %}
+{% if(!isset(_SESSION['planepower'])) _SESSION['planepower'] = "off"; %}
+{% planepower = _SESSION['planepower']; %}
+{% 
+    planelabel = "on";
+    if(planepower == 'on'): %}
+        <script type="text/javascript">
+            cockpitpower = "on";
+        </script>
+        {% planelabel = "off" %}
+    {% endif; %}
+<script type="text/javascript">
+    terminaldone = "{% print(_SESSION['terminaldone']); %}";
+    powerondone = "{% print(_SESSION['powerondone']); %}";
+</script>
+
+{% 
+if(planepower == 'off'): %}
+    <script type="text/javascript">cockpitpower = "off";</script>
+
+{% endif %}
+
+<div id="cockpit">
+    <img class="cockpit" src="{% print get_template_directory_uri(); %}/library/images/cockpit_back.png"  usemap="#Map"/>
+    <map name="Map" id="Map">
+        <area id="leftCockpit"  alt="" title=""  shape="poly" coords="307,182,514,183,512,340,305,340" />
+        <area id="rightCockpit" alt="" title=""  shape="poly" coords="898,182,1103,182,1104,339,895,341" />
+        <area id="topcockpit" href="{% print(get_permalink(54)); %}" alt="" title=""  shape="poly" coords="603,183,809,182,809,341,599,342" />
+        <area id="bottomcockpit" href="{% print(get_permalink(50)); %}" alt="" title=""  shape="poly" coords="602,362,807,361,809,525,606,524" />
+    </map>
+    <div class="power {% if(planepower == 'on') print("on"); %}">Power {% print(planelabel); %}</div>
+</div>
+<div id="cockpittopright" class="hidden">
+    <img src="{% print get_template_directory_uri(); %/library/images/cockpitTopRight.jpg">
+</div>
+
+<div id="cockpittopleft" class="hidden">
+    <img src="{% print get_template_directory_uri(); %}/library/images/cockpitTopLeft.jpg">
+</div>
+
+
+{% get_footer(); %}

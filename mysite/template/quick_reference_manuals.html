@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+	<div id="iframeContainer" class="container-fluid fullheight">
+		<div class="row fullheight">
+			<iframe class="fullheight" src="external/app/QuickReferenceManuals.html" width="100%"></iframe>
+		</div>
+	</div>
+
+	<script>
+
+	$('#menuLeft .active a.pdf-manual').click(function(e){
+		e.preventDefault();
+		$('#iframeContainer .row').html('<iframe class="fullheight" src="'+$(this).attr('href')+'" width="100%"></iframe>')
+	})
+
+
+	</script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% TIME_ZONE = 'America/Montreal' %}
+<!-- $page = str_replace( array('/', '.php', 'greyboxcaedemo'), array('', '', ''), $_SERVER['PHP_SELF'] );-->
+<!-- replacing array('/', '.php', 'greboxcaedemo') with array('','','') in _SERVER['PHP_SELF'] -->
+<!-- page = _SERVER['PHP_SELF'].replace(array('/', '.php', 'greyboxcaedemo'), array('', '', '')); -->
+
+<!doctype html>
+
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- force Internet Explorer to use the latest rendering engine available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Web APP</title>
+
+    <!-- // mobile meta (hooray!) -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=1400">
+
+    <link rel="stylesheet" href="css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="css/style.css?v={% print time(); %}" type="text/css" media="all" />
+
+    <script type='text/javascript' src='js/jquery.elevatezoom.js'></script>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='bootstrap-3.3.2-dist/js/bootstrap.min.js'></script>
+    <script type='text/javascript' src='js/libs/modernizr.custom.min.js'></script>
+
+    <script type='text/javascript' src='js/scripts.js?v={% print time(); %'></script>
+    <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+
+
+    <!-- // drop Google Analytics Here -->
+    <!-- // end analytics -->
+
+</head>
+
+<body class="page-{% print page; %}" itemscope itemtype="http://schema.org/WebPage">
+
+<header id="header">
+	<div id="menuLogoDiv"></div>
+
+</header>
+
+<div id="container">
